@@ -8,7 +8,7 @@ function BotsPage() {
   const [userArmy, setUserArmy] = useState([]);
   
   useEffect(() => {
-    fetch("http://localhost:8002/bots")
+    fetch("https://bot-battlr-code-challenge-1.onrender.com")
       .then((res) => res.json())
       .then((data) => setBots(data))
       .catch((err) => console.error("Error fetching bots:", err));
@@ -27,7 +27,7 @@ function BotsPage() {
   const dischargeBot = (bot) => {
     setUserArmy(userArmy.filter((b) => b.id !== bot.id));
   
-    fetch(`http://localhost:8002/bots/${bot.id}`, {
+    fetch(`https://bot-battlr-code-challenge-1.onrender.com`, {
       method: "DELETE"
     })
     .then(response => {
