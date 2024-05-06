@@ -1,15 +1,18 @@
 import React from "react";
 
-function YourBotArmy() {
-  //your bot army code here...
-
+function YourBotArmy({ userArmy, releaseBot }) {
   return (
     <div className="ui segment inverted olive bot-army">
       <div className="ui five column grid">
         <div className="row bot-army-row">
-          {/*...and here...*/}
-          Your Bot Army
+          <strong>Your Bot Army</strong>
         </div>
+        {userArmy.map((bot) => (
+          <div key={bot.id} className="column" onClick={() => releaseBot(bot)}>
+            <img src={bot.avatar_url} alt="bot" />
+            <span>{bot.name}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
