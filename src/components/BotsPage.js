@@ -63,7 +63,6 @@ function BotsPage() {
     setBots(sortedBots);
   };
   
-  
   return (
     <div>
       <SortBar handleSort={handleSort} />
